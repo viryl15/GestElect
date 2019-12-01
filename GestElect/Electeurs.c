@@ -3,7 +3,9 @@
 #include <math.h>
 #include <string.h>
 
+#include "Statistiques.h"
 #include "Electeurs.h"
+#include "Voter.h"
 #include "main.h"
 
 
@@ -12,19 +14,36 @@ struct Electeur {
 	char nom[50];
 	char prenom[50];
 	char sexe[1];
+	int vote;
 };
 
 struct Electeur electeur;
+
+struct Candidat {
+	char numCNI[32];
+	char nom[50];
+	char prenom[50];
+	char sexe[1];
+};
+
+struct Candidat candidat;
+
+struct Vote {
+	char electorCniNum[32];
+	char CandidateCniNum[32];
+};
+
+struct Vote vote;
 
 //#==========Launcher procedure============#
 void goElecteur() {
 	char choice[1];
 	char anwser;
-
+	//initElector();
 	do
 	{
 		system("cls");
-		printf("\n\t\t<<<<<<<@@@@@@@==== Gestionn des electeurs ====@@@@@@>>>>>>\n\n");
+		printf("\n\t\t<<<<<<<@@@@@@@==== Gestion des electeurs ====@@@@@@>>>>>>\n\n");
 		printf("\t 1- Afficher la liste des electeurs\n");
 		printf("\t 2- Ajouter un electeur\n");
 		printf("\t 3- Modifier les infos d'un electeur\n");
@@ -68,24 +87,59 @@ void goElecteur() {
 	main();
 }
 
+//void initElector() {
+//	FILE *F;
+//	F = fopen("Electeur.txt", "r");
+//	int i = 1;
+//	do
+//	{
+//		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
+//		if (hasVote(i) == 1) {
+//			electeur.vote, 1;
+//		}
+//		else {
+//			electeur.vote, 0;
+//		}
+//		printf("electeur.vote = %d \n", electeur.vote);
+//		fflush(stdin);
+//		i++;
+//		
+//	} while (!feof(F));
+//	fclose(F);
+//	system("pause");
+//}
+
 /*==========Fonction de recherche============#
   cette fonction permet de verifier si un numero de CNI donne existe deja dans la base de donnee*/
-int searchCniElecteur(char searchCNI[10]) {
+
+int checkCni(char cni[32]) {
 	FILE *F;
 	F = fopen("Electeur.txt", "r");
+
 	do
 	{
-		fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
-		fflush(stdin);
-		
-		if (strcmp(electeur.numCNI, searchCNI) == 0)
-		{
-			printf("electeur.numCNI %s", electeur.numCNI);
+		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
+		//fflush(stdin);
+		if (strcmp(electeur.numCNI, cni) == 0) {
+			//printf("electeur.numCNI %s", electeur.numCNI);
 			fclose(F);
 			return 1;
 		}
 	} while (!feof(F));
 	fclose(F);
+	FILE *F2;
+	F2 = fopen("Candidat.txt", "r");
+	do
+	{
+		fscanf(F2, "%s ;%s ;%s ;%s \n", &candidat.numCNI, &candidat.nom, &candidat.prenom, &candidat.sexe);
+		//fflush(stdin);
+		if (strcmp(candidat.numCNI, cni) == 0) {
+			//printf("electeur.numCNI %s", electeur.numCNI);
+			fclose(F2);
+			return 1;
+		}
+	} while (!feof(F));
+	fclose(F2);
 	return -1;
 }
 
@@ -94,7 +148,7 @@ void ajouterElecteur() {
 	FILE *F;
 	//int num;
 	F = fopen("Electeur.txt", "a");
-	printf("\n Entrez le numero du nouveau electeur ou tapez 'q' pour quitter : ");
+	printf("\n Entrez le numero du nouvel electeur : ");
 	//scanf("%d", &num);
 	char buf[10];
 	//scanf("%31[0132456789]", &buf);
@@ -106,18 +160,18 @@ void ajouterElecteur() {
 	//while (getchar() != '\n');
 	//printf("%d", sizeof(num));num < 100000000 || num >= 1000000000 
 	fflush(stdin);
-	printf("La taille du num cni est %d", strlen(buf));
+	//printf("La taille du num cni est %d", strlen(buf));
 	if (strlen(buf) != 9) {
 		//printf("Le nombre de chiffre de votre nombre est : %d", nombre_chiffre3(num));
-		printf("\n Entrez un numero a 9 chiffres ");
+		printf("\n Entrez un numero de CNI a 9 caracteres \n");
 		
 		//printf("Le nombre de chiffre de votre nombre est : %d", strlen(buf));
 		ajouterElecteur();
 	}
 	else {
-		while (searchCniElecteur(buf) == 1) {
-			printf("\n Ce numero existe deja :");
-			printf("\nEntrez un numero pour le nouveau electeur ou tapez 'q' pour quitter : ");
+		while (checkCni(buf) == 1) {
+			printf("\n Desole ce numero de CNI existe deja !!!");
+			printf("\nEntrez un numero de CNI pour le nouvel electeur : ");
 			//scanf("%d", &num);
 			//scanf("%31[0132456789]", &buf);
 			gets(buf);
@@ -129,15 +183,15 @@ void ajouterElecteur() {
 
 		strcpy(electeur.numCNI, buf);
 		// strtol(buf, NULL, 10);
-		printf("\n Entrez le nom ou tapez 'q' pour quitter : ");
+		printf("\n Entrez le nom : ");
 		gets(electeur.nom);
 		if (strlen(electeur.nom) == 1 && (electeur.nom[0] == 'q' || electeur.nom[0] == 'Q')) {
 			goElecteur();
 		}
 		fflush(stdin);
-		printf("\n Entrez le prenom ou tapez 'q' pour quitter : ");
+		printf("\n Entrez le prenom : ");
 		gets(electeur.prenom);
-		if (strlen(electeur.nom) == 1 && (electeur.nom[0] == 'q' || electeur.nom[0] == 'Q')) {
+		if (strlen(electeur.prenom) == 1 && (electeur.prenom[0] == 'q' || electeur.prenom[0] == 'Q')) {
 			goElecteur();
 		}
 		fflush(stdin);
@@ -145,7 +199,7 @@ void ajouterElecteur() {
 		char sexe1;
 		do
 		{
-			printf("\n Entrez le sexe 'M/F'  ou tapez 'q' pour quitter : ");
+			printf("\n Entrez le sexe 'M/F' : ");
 			gets(sexe);
 			fflush(stdin);
 			if (strlen(sexe) > 1){
@@ -158,18 +212,14 @@ void ajouterElecteur() {
 			}
 			sexe1 = toupper(sexe[0]);
 			if (strlen(sexe) == 1 && (sexe[0] == 'q' || sexe[0] == 'Q')) {
-				//break;
 				goElecteur();
 				break;
 			}
-			/*if (strlen(sexe) == 1 && (sexe[0] == 'm' || sexe[0] == 'M' || sexe[0] == 'f' | sexe[0] == 'F')) {
-				break;
-			}*/
 		} while (sexe1 != 'M' &&  sexe1 != 'F' );
+		sexe[0] = sexe1;
 		strcpy(electeur.sexe, sexe);
-		fflush(stdin);
-		fprintf(F, "%s ;%s ;%s ;%s \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe);
-		fclose(F);
+		fprintf(F, "%s ;%s ;%s ;%s ;%d \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe, electeur.vote);
+		//fflush(stdin);
 	}
 	fclose(F);
 }
@@ -188,13 +238,14 @@ void searchAndPrintElector() {
 
 	do
 	{
-		fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
+		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
 		if (strcmp(buf, electeur.numCNI) == 0) {
 			printf("===== Informations sur l'electeur =====\n\n");
 			printf("Numero de CNI :\t%s \n", electeur.numCNI);
 			printf("Nom :\t %s \n", electeur.nom);
 			printf("Prenom :\t %s \n", electeur.prenom);
 			printf("Sexe :\t %s \n", electeur.sexe);
+			printf("Vote :\t %d \n", electeur.vote);
 		}
 	} while (!feof(F));
 	fclose(F);
@@ -207,37 +258,55 @@ void supprimerElecteur() {
 	//int searchNum;
 	printf("Entrez le numero de l'electeur a supprimer ou tapez 'q' pour quitter : ");
 	//scanf("%d", &searchNum);
-	char buf[9];
+	char buf[32];
 	gets(buf);
 	if (strlen(buf) == 1 && (buf[0] == 'q' || buf[0] == 'Q')) {
 		goElecteur();
 	}
-	fflush(stdin);
-	if (searchCniElecteur(buf) == 1) {
-		printf("\n Voulez vous vraiment supprimer o/n ? ");
-		scanf("%c", &answer);
-		while (getchar() != '\n');
-		fflush(stdin);
-		if (answer == 'o' || answer == 'O') {
-			FILE *tempF, *F;
-			F = fopen("Electeur.txt", "r");
-			tempF = fopen("TempElecteur.txt", "a");
-			do {
-				fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
-				if (strtol(buf, NULL, 10) != strtol(electeur.numCNI, NULL, 10)) {
-					fprintf(tempF, "%s ;%s ;%s ;%s \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe);
-				}
-			} while (!feof(F));
-			fclose(tempF);
-			fclose(F);
-			remove("Electeur.txt");
-			rename("TempElecteur.txt", "Electeur.txt");
-			printf("\nSuppression effectuee avec succes\n");
+	FILE *F;
+	F = fopen("Vote.txt", "r");
+	int result = 0;
+	while (!feof(F)) {
+		fscanf(F, "%s ;%s \n", &vote.electorCniNum, &vote.CandidateCniNum);
+		//printf("buf = %s; vote.electorCniNum = %s\n", buf, vote.electorCniNum);
+		if (strcmp(buf, vote.electorCniNum) == 0) {
+			result = 1;
 		}
-
+			//fflush(stdin);
+	}
+	fclose(F);
+	//fflush(stdin);
+	//printf("result = %d \n", result);
+	if (result == 1) {
+		printf("\n Impossible de supprimer cet electeur car il a deja voter. \n");
 	}
 	else {
-		printf("\n Ce numero d'electeur n'est pas encore attribue\n");
+		if (checkCni(buf) == 1) {
+			printf("\n Voulez vous vraiment supprimer o/n ? ");
+			scanf("%c", &answer);
+			while (getchar() != '\n');
+			fflush(stdin);
+			if (answer == 'o' || answer == 'O') {
+				FILE *tempF, *F;
+				F = fopen("Electeur.txt", "r");
+				tempF = fopen("TempElecteur.txt", "a");
+				do {
+					fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
+					if (strtol(buf, NULL, 10) != strtol(electeur.numCNI, NULL, 10)) {
+						fprintf(tempF, "%s ;%s ;%s ;%s ;%d \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe, electeur.vote);
+					}
+				} while (!feof(F));
+				fclose(tempF);
+				fclose(F);
+				remove("Electeur.txt");
+				rename("TempElecteur.txt", "Electeur.txt");
+				printf("\nSuppression effectuee avec succes\n");
+			}
+
+		}
+		else {
+			printf("\n Ce numero d'electeur n'est pas encore attribue\n");
+		}
 	}
 }
 
@@ -246,7 +315,7 @@ void supprimerElecteur() {
 void modifierElecteur() {
 	//int searchNum;
 	char answer1[2];
-	printf("\n Entrez le numero de CNI de l'electeur a modifier ou tapez 'q' pour quitter : ");
+	printf("\n Entrez le numero de CNI de l'electeur a modifier : ");
 	//scanf("%d", &searchNum);
 	char buf[10];
 	gets(buf);
@@ -254,7 +323,7 @@ void modifierElecteur() {
 		goElecteur();
 	}
 	fflush(stdin);
-	if (searchCniElecteur(buf) == 1) {
+	if (checkCni(buf) == 1) {
 		printf("\n Voulez vous vraiment modifier ? o/n : ");
 		//scanf("%s", &answer1);
 		gets(answer1);
@@ -266,7 +335,7 @@ void modifierElecteur() {
 			F = fopen("Electeur.txt", "r");
 			tempF = fopen("TempElecteur.txt", "a");
 			do {
-				fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
+				fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
 				if (strcmp(buf, electeur.numCNI) == 0) {
 					strcpy(electeur.numCNI, buf);
 					printf("\n Entrez le nom :");
@@ -283,7 +352,7 @@ void modifierElecteur() {
 					char sexe1;
 					do
 					{
-						printf("\n Entrez le sexe 'M/F'  ou tapez 'q' pour quitter : ");
+						printf("\n Entrez le sexe 'M/F'  : ");
 						gets(sexe);
 						fflush(stdin);
 						if (strlen(sexe) > 1) {
@@ -304,10 +373,17 @@ void modifierElecteur() {
 							break;
 						}*/
 					} while (sexe1 != 'M' &&  sexe1 != 'F');
+					sexe[0] = sexe1;
 					strcpy(electeur.sexe, sexe);
 					fflush(stdin);
+					if (hasVote(nbrDelecteurs() + 1) == 1) {
+						electeur.vote, 1;
+					}
+					else {
+						electeur.vote, 0;
+					}
 				}
-				fprintf(tempF, "%s ;%s ;%s ;%s \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe);
+				fprintf(tempF, "%s ;%s ;%s ;%s ;%d \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe, electeur.vote);
 			} while (!feof(F));
 			fflush(stdin);
 			fclose(tempF);
@@ -331,15 +407,30 @@ void modifierElecteur() {
 void afficherElecteurs() {
 	FILE *F;
 	F = fopen("Electeur.txt", "r");
-	printf("\tLa liste des electeurs est: \n\n");
-	printf("\tNUMERO DE CNI\t||\t NOM \t||\t PRENOM \t||\t SEXE\n\n");
+	printf("\n\tLISTE DES ELECTEURS \n\n");
+	printf("\t===================> \n\n");
+	printf("\t ___________________________________________________________________________________________________________\n");
+	printf("\t|NUMERO DE CNI\t||\t NOM \t||\t PRENOM \t||\t SEXE \t||\t VOTE \t\t\t    |\n");
+	printf("\t|_______________||______________||______________________||______________||__________________________________|\n");
 	do {
-		fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
+		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
 		fflush(stdin);
-		printf("\t%s\t||\t", electeur.numCNI);
-		printf("\t%s\t\t||\t", electeur.nom);
-		printf("\t%s\t\t||\t", electeur.prenom);
-		printf("\t%s\n", electeur.sexe);
+		printf("\t|%s\t||", electeur.numCNI);
+		if (strlen(electeur.nom) > 7) {
+			printf("%s||", electeur.nom);
+		}
+		else {
+			printf("\t%s\t||", electeur.nom);
+		}
+		if (strlen(electeur.prenom) > 7) {
+			printf("   %s   ||\t", electeur.prenom);
+		}
+		else {
+			printf("\t%s\t\t||\t", electeur.prenom);
+		}
+		printf("%s\t||\t", electeur.sexe);
+		printf("%d\t\t\t    |\n", electeur.vote);
+		printf("\t|___________________________________________________________________________________________________________|\n");
 	} while (!feof(F));
 	fclose(F);
 }

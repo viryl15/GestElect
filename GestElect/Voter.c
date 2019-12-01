@@ -12,6 +12,7 @@ struct Electeur {
 	char nom[50];
 	char prenom[50];
 	char sexe[1];
+	int vote;
 };
 struct Electeur electeur;
 
@@ -77,7 +78,7 @@ int hasVote(int electorChoice) {
 	F = fopen("Electeur.txt", "r");
 	int i = 1;
 	do {
-		fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
+		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
 		fflush(stdin);
 		if (electorChoice == i) {
 			//printf("CNI de Votre choix %s \n", electeur.numCNI);
@@ -86,10 +87,11 @@ int hasVote(int electorChoice) {
 			do {
 				fscanf(V, "%s ;%s \n", &vote.electorCniNum, &vote.CandidateCniNum);
 				fflush(stdin);
-				//printf("vote.electorCniNum : %s \n", vote.electorCniNum);
+				//verifier si le numero de CNI de l'electeur en question est dans la liste des votes deja effectuer
 				if (strcmp(electeur.numCNI, vote.electorCniNum) == 0) {
+					//l'electeur en question a deja voter
 					val = 1;
-					//printf("Gooooooooooooooooood !!!!!!!! \n");
+					break;
 				}
 			} while (!feof(V));
 			fclose(V);
@@ -102,13 +104,15 @@ int hasVote(int electorChoice) {
 	return val;
 }
 
-//#========> Fonction permettant de verifier si au moins vote a ete fait <=========#
+//#========> Fonction permettant de verifier si au moins 1 vote a ete fait <=========#
 int voteHasBeenApply() {
 	FILE *V;
 	V = fopen("Vote.txt", "r");
+	//positionnement a la fin du fichier
 	fseek(V, 0, SEEK_END);
-	printf("Positon curseur = %d \n", ftell(V));
+	//printf("Positon curseur = %d \n", ftell(V));
 	int val = 0;
+	//recuperation de la position du curseur dans le fichier avec ftell(V)
 	if (ftell(V) > 0) {
 		val = 1;
 	}
@@ -118,21 +122,40 @@ int voteHasBeenApply() {
 
 //#========> Affichage de la liste des electeurs pour vote <=========#
 int afficherListeElecteursV() {
+	modifierElecteurApresElection();
 	FILE *F;
 	F = fopen("Electeur.txt", "r");
-	printf("\tLa liste des electeurs est: \n\n");
-	printf("\tNUMERO DE ELECTEUR||\t NOM \t||\t PRENOM \t||\t SEXE\n\n");
+	printf("\tLISTE DES ELECTEURS \n");
+	printf("\t===================> \n\n");
+	printf("\t ___________________________________________________________________________________________________________\n");
+	printf("\t|NUMERO    ELECTEUR||\t NOM \t||\t PRENOM \t||\t SEXE \t||\t VOTE \t\t\t    |\n");
+	printf("\t|__________________||___________||______________________||______________||__________________________________|\n");
 	int i = 1;
 	do {
-		fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
+		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
 		fflush(stdin);
-		printf("\t\t%d\t  ||", i);
-		printf("\t%s\t||", electeur.nom);
-		printf("\t%s\t\t||", electeur.prenom);
-		printf("\t%s\n", electeur.sexe);
+		printf("\t|\t%d\t   ||", i);
+		if (strlen(electeur.nom) > 7) {
+			printf("%s||", electeur.nom);
+		}
+		else {
+			printf("\t%s\t||", electeur.nom);
+		}
+		if (strlen(electeur.prenom) > 7) {
+			printf("   %s   ||\t", electeur.prenom);
+		}
+		else {
+			printf("\t%s\t\t||\t", electeur.prenom);
+		}
+		/*printf("\t%s\t||", electeur.nom);
+		printf("\t%s\t\t||", electeur.prenom);*/
+		printf("%s\t||\t", electeur.sexe);
+		printf("%d\t\t\t    |\n", electeur.vote);
+		printf("\t|___________________________________________________________________________________________________________|\n");
 		i++;
 	} while (!feof(F));
 	fclose(F);
+	
 	return i - 1;
 }
 
@@ -140,13 +163,12 @@ int afficherListeElecteursV() {
 void makeElectorChoice(int num) {
 	FILE *F;
 	F = fopen("Electeur.txt", "r");
-	/*printf("\tLa liste des electeurs est: \n\n");
-	printf("\tNUMERO DE ELECTEUR\t||\t NOM \t||\t PRENOM \t||\t SEXE\n\n");*/
 	int i = 1;
 	do {
-		fscanf(F, "%s ;%s ;%s ;%s \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe);
+		fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
 		fflush(stdin);
 		if (num == i) {
+			//fclose(F);
 			afficherListeCandidatsV(electeur.numCNI);
 			break;
 		}
@@ -160,16 +182,30 @@ void afficherListeCandidatsV(char ElectorCniNum[32]) {
 	FILE *F;
 	F = fopen("Candidat.txt", "r");
 	system("cls");
-	printf("\tLa liste des candidat est: \n\n");
-	printf("\tNUMERO DU CANDIDAT||\t NOM \t||\t PRENOM \t||\t SEXE\n\n");
+	printf("\n\tLISTE DES CANDIDATS \n");
+	printf("\t===================> \n\n");
+	printf("\t ___________________________________________________________________________________________\n");
+	printf("\t|NUMERO DU CANDIDAT||\t NOM \t||\t PRENOM \t||\t SEXE \t\t\t    |\n");
+	printf("\t|__________________||___________||______________________||__________________________________|\n");
 	int i = 1;
 	do {
 		fscanf(F, "%s ;%s ;%s ;%s \n", &candidat.numCNI, &candidat.nom, &candidat.prenom, &candidat.sexe);
 		fflush(stdin);
-		printf("\t%d\t||\t", i);
-		printf("\t%s    ||", candidat.nom);
-		printf("  %s    ||", candidat.prenom);
-		printf("\t%s\n", candidat.sexe);
+		printf("\t|%d\t\t   ||", i);
+		if (strlen(candidat.nom) > 7) {
+			printf("%s||", candidat.nom);
+		}
+		else {
+			printf("\t%s\t||", candidat.nom);
+		}
+		if (strlen(candidat.prenom) > 7) {
+			printf("   %s   ||\t", candidat.prenom);
+		}
+		else {
+			printf("\t%s\t\t||\t", candidat.prenom);
+		}
+		printf("\t%s\t\t    |\n", candidat.sexe);
+		printf("\t|___________________________________________________________________________________________|\n");
 		i++;
 	} while (!feof(F));
 	fclose(F);
@@ -208,6 +244,7 @@ void makeCandidateChoice(int candidateNum, char ElectorCniNum[32]) {
 			if (candidateNum == i) {
 				fprintf(V, "%s ;%s \n", ElectorCniNum, candidat.numCNI);
 				printf("Vous avez voter pour *** %s %s *** \n", candidat.nom, candidat.prenom);
+				//modifierElecteurApresElection();
 				break;
 			}
 			i++;
@@ -215,4 +252,74 @@ void makeCandidateChoice(int candidateNum, char ElectorCniNum[32]) {
 	}
 	fclose(F);
 	fclose(V);
+	
+}
+
+int nbrVote() {
+	FILE *F;
+	F = fopen("Vote.txt", "r");
+	int nbrDeVote = 0;
+	while (!feof(F)) {
+		fscanf(F, "%s ;%s \n", &vote.electorCniNum, &vote.CandidateCniNum);
+		fflush(stdin);
+		nbrDeVote++;
+	}
+	fclose(F);
+	return nbrDeVote;
+}
+
+void modifierElecteurApresElection() {
+	int g = 1;
+	FILE *file;
+	file = fopen("Vote.txt", "r");
+	printf("Debut !!!!!!!!!!!\n");
+	system("pause");
+	while (g <= nbrVote()) {
+		fscanf(file, "%s ;%s \n", &vote.electorCniNum, &vote.CandidateCniNum);
+		char ElectorCniNum[32];
+		
+		if (g == nbrVote()) {
+			strcpy(ElectorCniNum, vote.electorCniNum);
+			printf("nbrVote() = %d\n", nbrVote());
+			printf("ElectorCniNum = %s\n", ElectorCniNum);
+			system("pause");
+			FILE *tempF, *F;
+			F = fopen("Electeur.txt", "r");
+			tempF = fopen("TempElecteur.txt", "w");
+			do {
+				fscanf(F, "%s ;%s ;%s ;%s ;%d \n", &electeur.numCNI, &electeur.nom, &electeur.prenom, &electeur.sexe, &electeur.vote);
+				if (strcmp(ElectorCniNum, electeur.numCNI) == 0) {
+					strcpy(electeur.numCNI, ElectorCniNum);
+					strcpy(electeur.nom, electeur.nom);
+					strcpy(electeur.prenom, electeur.prenom);
+					strcpy(electeur.sexe, electeur.sexe);
+					electeur.vote = 1;
+					
+					//fflush(stdin);
+				}
+				//printf("ElectorCniNum = %s electeur.numCNI = %s\n", ElectorCniNum, electeur.numCNI);
+				//printf("electeur.vote = %d\n", electeur.vote);
+				fprintf(tempF, "%s ;%s ;%s ;%s ;%d \n", electeur.numCNI, electeur.nom, electeur.prenom, electeur.sexe, electeur.vote);
+			} while (!feof(F));
+			//fflush(stdin);
+			fclose(tempF);
+			fclose(F);
+			fclose(F);
+			fclose(F);
+			fclose(F);
+			/*FILE *K;
+			K = fopen("Test.txt", "w");
+			
+			printf("REMOVE = %d\n", fclose(F));
+			fclose(K);
+			remove("Electeur.txt");*/
+			remove("Electeur.txt");
+			system("pause");
+			rename("TempElecteur.txt", "Electeur.txt");
+			//printf("\n Modification reussie !\n");
+		}
+		g++;
+	}
+	fclose(file);
+
 }

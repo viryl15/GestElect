@@ -1,16 +1,21 @@
-000000001 ;test ;test ;f 
-534878383 ;Yoan ;Yoan ;M 
-328892334 ;deni ;jcwnj ;M 
-fjfejnvjj ;vjdfl ;dmfvl ;m 
-678909788 ;nvhjnh ;jj ;m 
-ndwcmwjkl ;jkcds ;dskj ;m 
-ijasdjeek ;noir ;nnkk ;f 
-fionreows ;mgfj ;kdj ;f 
-mndiomdmp ;nsnc ;dj ;m 
-mfevmoikl ;fdks ;wee ;f 
-dlshbdbkh ;sdn ;dk ;m 
-jvkjksdsl ;froc ;vj ;m 
-v21ueu232 ;name ;surname ;f 
-vnifiefvc ;vn ;si ;f 
-fmeoimwsw ;mcd ;sko ;f 
-cdniedcce ;ecw ;wec ;m 
+000000001 ;test ;test ;F ;0 
+534878383 ;Yoan ;Yoan ;M ;1 
+328892334 ;deni ;jcwnj ;M ;1 
+fjfejnvjj ;vjdfl ;dmfvl ;M ;0 
+678909788 ;nvhjnh ;jj ;M ;1 
+ndwcmwjkl ;jkcds ;dskj ;M ;0 
+ijasdjeek ;noir ;nnkk ;F ;1 
+fionreows ;mgfj ;kdj ;F ;1 
+mndiomdmp ;nsnc ;dj ;M ;1 
+mfevmoikl ;fdks ;wee ;F ;0 
+dlshbdbkh ;sdn ;dk ;M ;1 
+jvkjksdsl ;froc ;vj ;M ;0 
+v21ueu232 ;name ;surname ;F ;0 
+vnifiefvc ;vn ;si ;F ;0 
+fmeoimwsw ;mcd ;sko ;F ;1 
+cdniedcce ;ecw ;wec ;M ;1 
+mwvcwlrwe ;wsmdco ;scn ;F ;0 
+vveuh4823 ;electeur_bashed ;osdcwcwcv ;M ;0 
+23ud7d732 ;DONGMO_NANFACK ;William_Dimitri ;M ;0 
+8fh498fjn ;Candidat_5 ;prenom_5 ;M ;0 
+cxuqi87e3 ;xb ;ahd ;M ;0 

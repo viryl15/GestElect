@@ -1,3 +1,174 @@
-﻿  main.c
+﻿  Candidats.c
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(47): warning C4013: 'gets' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(70): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: voir la déclaration de 'scanf'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(96): warning C4013: 'strlen' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(125): warning C4013: 'strcpy' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(150): warning C4047: '!=' : les niveaux d'indirection de 'int' et de 'void *' sont différents
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(154): warning C4013: 'toupper' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(89): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(170): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(194): warning C4013: 'strcmp' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(189): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(193): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(254): warning C4047: '!=' : les niveaux d'indirection de 'int' et de 'void *' sont différents
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(227): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(228): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(230): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(294): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\candidats.c(301): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+  Electeurs.c
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(57): warning C4013: 'gets' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(83): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: voir la déclaration de 'scanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(117): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(121): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(131): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(134): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(209): warning C4047: '!=' : les niveaux d'indirection de 'int' et de 'void *' sont différents
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(213): warning C4013: 'toupper' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(150): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(184): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(220): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(237): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(241): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(267): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(270): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(286): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: voir la déclaration de 'scanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(291): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(292): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(294): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(362): warning C4047: '!=' : les niveaux d'indirection de 'int' et de 'void *' sont différents
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(335): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(336): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(338): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(340): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(377): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(409): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\electeurs.c(416): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+  main.c
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(12): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
 c:\users\dylan\source\repos\gestelect\gestelect\main.c(14): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(25): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(36): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(46): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(85): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: voir la déclaration de 'scanf'
+c:\users\dylan\source\repos\gestelect\gestelect\main.c(106): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: voir la déclaration de 'scanf'
+  Statistiques.c
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(148): warning C4013: 'gets' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(158): warning C4013: 'toupper' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(41): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(44): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(64): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(68): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(71): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(75): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(163): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\statistiques.c(166): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+  Voter.c
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(50): warning C4013: 'gets' non défini(e) ; extern retournant int pris par défaut
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(66): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: voir la déclaration de 'scanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(78): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(81): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(86): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(88): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(110): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(127): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(135): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(165): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(168): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(182): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(191): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(229): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(230): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(231): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(241): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(259): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(262): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(273): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(275): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(279): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(283): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(284): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: voir la déclaration de 'fopen'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(286): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: voir la déclaration de 'fscanf'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(288): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(289): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(290): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(291): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: voir la déclaration de 'strcpy'
+  Génération de code en cours...

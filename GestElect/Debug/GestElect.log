@@ -1,2 +1,3 @@
-﻿  main.c
+﻿  Voter.c
+c:\users\dylan\source\repos\gestelect\gestelect\voter.c(50): warning C4013: 'gets' non défini(e) ; extern retournant int pris par défaut
   GestElect.vcxproj -> C:\Users\DYLAN\source\repos\GestElect\Debug\GestElect.exe

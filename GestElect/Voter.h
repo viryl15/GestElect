@@ -8,4 +8,6 @@ int voteHasBeenApply();
 void makeElectorChoice(int num);
 void afficherListeCandidatsV(char ElectorCniNum[32]);
 void makeCandidateChoice(int candidateNum, char ElectorCniNum[32]);
+int nbrVote();
+void modifierElecteurApresElection();
 #endif
